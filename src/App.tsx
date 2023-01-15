@@ -1,15 +1,19 @@
-import styled from 'styled-components';
+import { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 import { Menu, NavBar } from './components';
+import { lightTheme } from './utils/Theme';
 
 const App = () => {
   return (
-    <Container>
-      <Menu />
-      <Main>
-        <NavBar />
-        <Wrapper>Video Cards</Wrapper>
-      </Main>
-    </Container>
+    <ThemeProvider theme={lightTheme}>
+      <Container>
+        <Menu />
+        <Main>
+          <NavBar />
+          <Wrapper>Video Cards</Wrapper>
+        </Main>
+      </Container>
+    </ThemeProvider>
   );
 };
 
@@ -21,6 +25,7 @@ const Container = styled.div`
 
 const Main = styled.main`
   flex: 8;
+  background-color: ${(props) => props.theme.bg};
 `;
 
 const Wrapper = styled.div``;

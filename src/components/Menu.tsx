@@ -20,9 +20,9 @@ export default Menu;
 
 const Container = styled.menu`
   flex: 2;
-  background-color: #202020;
+  background-color: ${({ theme }) => theme.bg};
   height: 100vh;
-  color: #fff;
+  color: ${({ theme }) => theme.text};
   font-style: 1px;
   font-size: 1.4rem;
   position: sticky;
@@ -33,7 +33,7 @@ const Container = styled.menu`
   scrollbar-width: thin;
 
   &:hover {
-    scrollbar-color: #fff transparent;
+    scrollbar-color: ${({ theme }) => theme.textSoft} transparent;
   }
 `;
 

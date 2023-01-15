@@ -43,6 +43,7 @@ export default MenuItems;
 const Items = styled.ul`
   hr {
     margin: 1.5rem 0;
+    border: 0.5px solid ${({ theme }) => theme.soft};
   }
 
   li {
@@ -56,7 +57,7 @@ const Items = styled.ul`
   h2 {
     font-size: 1.4rem;
     font-weight: 500;
-    color: #aaa;
+    color: ${({ theme }) => theme.textSoft};
     margin-bottom: 1.5rem;
     text-transform: uppercase;
   }
