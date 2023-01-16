@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { menuItems } from '../data/menuItems';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { toggleDarkTheme } from '../features/theme/themeSlice';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 
 const MenuItems = () => {
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector((state) => state.theme.darkTheme);
+
   return (
     <Items>
       {menuItems.map((item) => {
@@ -24,10 +29,18 @@ const MenuItems = () => {
                 <h2>best of clonetube</h2>
               </>
             )}
-            <li>
-              {icon}
-              {title}
-            </li>
+            {title === 'Mode' ? (
+              <ThemeButton onClick={() => dispatch(toggleDarkTheme())}>
+                {icon}
+                {theme ? 'Dark Mode' : 'Light Mode'}
+              </ThemeButton>
+            ) : (
+              <li>
+                {icon}
+                {title}
+              </li>
+            )}
+
             {(title === 'Subscriptions' ||
               title === 'History' ||
               title === 'Live') && <hr />}
@@ -77,4 +90,17 @@ const Login = styled.div`
     margin-top: 5px;
     cursor: pointer;
   }
+`;
+
+const ThemeButton = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  gap: 2rem;
+  cursor: pointer;
+  padding: 7.5px 0;
+  font: inherit;
+  color: inherit;
 `;

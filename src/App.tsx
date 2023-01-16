@@ -1,11 +1,13 @@
-import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import { useAppSelector } from './app/hooks';
 import { Menu, NavBar } from './components';
-import { lightTheme } from './utils/Theme';
+import { lightTheme, darkTheme } from './features/theme/Theme';
 
 const App = () => {
+  const theme = useAppSelector((state) => state.theme.darkTheme);
+
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={theme ? darkTheme : lightTheme}>
       <Container>
         <Menu />
         <Main>

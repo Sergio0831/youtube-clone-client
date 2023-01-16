@@ -1,6 +1,4 @@
-export type ThemeType = typeof lightTheme;
-
-export const darkTheme: ThemeType = {
+export const darkTheme = {
   bg: '#181818',
   bgLighter: '#202020',
   text: '#fff',
@@ -15,5 +13,3 @@ export const lightTheme = {
   textSoft: '#787878',
   soft: '#f5f5f5'
 };
-
-export const theme = lightTheme;
