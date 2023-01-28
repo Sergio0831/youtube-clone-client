@@ -3,13 +3,15 @@ export const darkTheme = {
   bgLighter: '#202020',
   text: '#fff',
   textSoft: '#aaa',
-  soft: '#373737'
+  soft: '#373737',
+  searchButton: '#303030'
 };
 
 export const lightTheme = {
   bg: '#f9f9f9',
   bgLighter: '#fff',
-  text: '#000',
+  text: 'rgb(15, 15, 15)',
   textSoft: '#787878',
-  soft: '#f5f5f5'
+  soft: 'rgba(0, 0, 0, 0.05)',
+  searchButton: '#969696'
 };

@@ -20,7 +20,7 @@ export default Menu;
 
 const Container = styled.menu`
   flex: 2;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.bgLighter};
   height: 100vh;
   color: ${({ theme }) => theme.text};
   font-style: 1px;
@@ -38,7 +38,7 @@ const Container = styled.menu`
 `;
 
 const Wrapper = styled.div`
-  padding: 1.8rem 2.6rem;
+  padding: 1.8rem 1.6rem;
 `;
 
 const Logo = styled.div`
@@ -47,6 +47,7 @@ const Logo = styled.div`
   gap: 5px;
   font-weight: bold;
   margin-bottom: 2rem;
+  margin-left: 1rem;
 
   img {
     height: 2.5rem;

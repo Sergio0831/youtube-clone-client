@@ -5,6 +5,7 @@ import { menuItems } from '../data/menuItems';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { toggleDarkTheme } from '../features/theme/themeSlice';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
+import SignInButton from './ui/SignInButton';
 
 const MenuItems = () => {
   const dispatch = useAppDispatch();
@@ -20,10 +21,7 @@ const MenuItems = () => {
               <>
                 <Login>
                   Sign in to like videos, comment and subscribe.
-                  <button>
-                    <AccountCircleOutlinedIcon />
-                    SIGN IN
-                  </button>
+                  <SignInButton />
                 </Login>
                 <hr />
                 <h2>best of clonetube</h2>
@@ -55,7 +53,7 @@ export default MenuItems;
 
 const Items = styled.ul`
   hr {
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 1.5rem 1rem;
     border: 0.5px solid ${({ theme }) => theme.soft};
   }
 
@@ -64,7 +62,13 @@ const Items = styled.ul`
     align-items: center;
     gap: 2rem;
     cursor: pointer;
-    padding: 7.5px 0;
+    padding: 8px 0 8px 1rem;
+    transition: ease 100ms;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.soft};
+      border-radius: 1rem;
+    }
   }
 
   h2 {
@@ -72,23 +76,16 @@ const Items = styled.ul`
     font-weight: 500;
     color: ${({ theme }) => theme.textSoft};
     margin-bottom: 1.5rem;
+    margin-left: 1rem;
     text-transform: uppercase;
   }
 `;
 
 const Login = styled.div`
+  padding-left: 1rem;
+
   button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 1.5rem;
-    background-color: transparent;
-    border: 1px solid #3ea6ff;
-    color: #3ea6ff;
-    border-radius: 3px;
-    font-weight: 500;
     margin-top: 5px;
-    cursor: pointer;
   }
 `;
 
@@ -100,7 +97,13 @@ const ThemeButton = styled.button`
   width: 100%;
   gap: 2rem;
   cursor: pointer;
-  padding: 7.5px 0;
+  padding: 8px 0 8px 1rem;
   font: inherit;
   color: inherit;
+  transition: ease 100ms;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+    border-radius: 1rem;
+  }
 `;
